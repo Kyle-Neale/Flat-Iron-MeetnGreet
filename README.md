@@ -1,2 +1,2 @@
 # Flat-Iron-MeetnGreet
-Flat Iron/ Access Labs Mixer App - "Live, Learn, Love"  to code.
+Flat Iron/ Access Labs Mixer App
