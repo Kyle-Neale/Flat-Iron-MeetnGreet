@@ -1,3 +1,12 @@
+<h3>Sign Up</h3>
+<br>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+<% end %>
+
+
 <%= form_for (@user) do |f| %>
   <%= f.label :first_name%>
   <%= f.text_field :first_name %><br>
@@ -5,6 +14,8 @@
   <%= f.text_field :last_name %><br>
   <%= f.label :mod%>
   <%= f.text_field :mod %><br>
+  <%= f.label :likes%>
+  <%= f.text_field :likes %><br>
   <%= f.label :email%>
   <%= f.text_field :email %><br>
   <%= f.label :user_name%>

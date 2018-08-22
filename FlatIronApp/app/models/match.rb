@@ -24,4 +24,18 @@ class Match < ApplicationRecord
   def inverse_match_options
     { matched_user_id: user_id, user_id: matched_user_id }
   end
+
+  def find_by_full_name(name_string)
+
+    User.all.find do |user|
+      user.full_name == name_string
+    end
+  end
+
+  private
+
+  def full_name_params
+
+  end
+
 end

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_160055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["requested_user_id"], name: "index_sent_requests_on_requested_user_id"
+    t.index ["user_id", "requested_user_id"], name: "index_sent_requests_on_user_id_and_requested_user_id", unique: true
     t.index ["user_id"], name: "index_sent_requests_on_user_id"
   end
 

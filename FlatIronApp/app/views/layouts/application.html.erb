@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FlatIronDatingsite</title>
+    <title>FlatIron MeetnGreet</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <h1>Flatiron MeetnGreet</h1>
+    <%  if current_user %>
+      <%= form_tag "/logout", method: :delete do %>
+      <%= submit_tag "Logout" %>
+      <%= link_to "Go to your Profile", user_path(current_user) %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

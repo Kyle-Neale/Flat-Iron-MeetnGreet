@@ -1,40 +1,20 @@
-<h3> <%= @user.first_name %> </h3>
-<p>
-  <%= @user.user_name %>
-</p>
+<h3> Welcome <%= @user.full_name %>! </h3>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
 
-<p>
-<%= @user.mod %>
-</p>
-
-<p>
-<%= @user.email %>
-</p>
-
-<p>
-<%= @user.likes %>
-</p>
-
-<p> Sent Requests To:
+<p> Sent Requests To:</p>
 <% @user.requested_users.each do |requested_user| %>
-  <%= requested_user.first_name + "" + requested_user.last_name %>
+  <li><%= requested_user.full_name %></li>
 <% end %>
+<%= link_to "Send a new request", new_sent_request_path %>
+
+<p> Number of Friends:
+    <%= @user.matches.count %>
 </p>
+<%= link_to "Guess to Match", new_match_path %>
 
-<% count = 0 %>
-
-<p> Number of Requests Received:
-<% @sent_requests.each do |sent_request| %>
-  <%= sent_request.requested_user_id if sent_request.requested_user_id == @user.id %>
-  <% count += 1 %>
-<% end %>
-</p>
-<%= "You have #{count} pending notifications" %><br>
-
-<p> Matched With:
+<p> Matched With: </p>
 <% @user.matched_users.each do |matched_user| %>
-  <%= matched_user.first_name + "" + matched_user.last_name %>
+  <li><%= link_to matched_user.full_name, profile_path(matched_user) %></li>
 <% end %>
-</p>
-
-<%= link_to edit_user_path(@user) %>
+<br>
+<%= link_to "User Profiles", users_path %>
