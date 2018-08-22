@@ -22,14 +22,11 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.new(user_params)
-    byebug
     if @user.save
       redirect_to user_path(@user)
     else
-      if @user.nil?
-        flash[:errors] = @user.errors.full_messages
+      flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path(@user)
     end
   end

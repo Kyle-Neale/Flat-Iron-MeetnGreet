@@ -4,7 +4,7 @@
 
 <p>Hints:</p>
 <% @sent_requests.each do |request|%>
-  <% if request.requested_user == @user %>
+  <% if request.requested_user == @user && !@user.matched_users.include?(request.user) %>
     <li>Mod<%= request.user.mod  %></li>
     <li><%= request.user.likes  %></li>
     <br>
