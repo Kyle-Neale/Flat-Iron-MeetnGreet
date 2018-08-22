@@ -1,0 +1,40 @@
+<h3> <%= @user.first_name %> </h3>
+<p>
+  <%= @user.user_name %>
+</p>
+
+<p>
+<%= @user.mod %>
+</p>
+
+<p>
+<%= @user.email %>
+</p>
+
+<p>
+<%= @user.likes %>
+</p>
+
+<p> Sent Requests To:
+<% @user.requested_users.each do |requested_user| %>
+  <%= requested_user.first_name + "" + requested_user.last_name %>
+<% end %>
+</p>
+
+<% count = 0 %>
+
+<p> Number of Requests Received:
+<% @sent_requests.each do |sent_request| %>
+  <%= sent_request.requested_user_id if sent_request.requested_user_id == @user.id %>
+  <% count += 1 %>
+<% end %>
+</p>
+<%= "You have #{count} pending notifications" %><br>
+
+<p> Matched With:
+<% @user.matched_users.each do |matched_user| %>
+  <%= matched_user.first_name + "" + matched_user.last_name %>
+<% end %>
+</p>
+
+<%= link_to edit_user_path(@user) %>

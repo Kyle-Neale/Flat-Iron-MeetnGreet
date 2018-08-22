@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mod: 1
+  age: 1
+  likes: MyText
+  bio: MyText
+
+two:
+  name: MyString
+  mod: 1
+  age: 1
+  likes: MyText
+  bio: MyText
