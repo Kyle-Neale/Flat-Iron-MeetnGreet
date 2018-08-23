@@ -1,4 +1,4 @@
 <br>
 <% @users.each do |user| %>
-  <p><%= link_to user.first_name + " " + user.last_name, profile_path(user) %></p>
+  <p><%= link_to user.full_name, profile_path(user) %></p>
 <% end %>

@@ -5,14 +5,15 @@ class User < ApplicationRecord
   has_many :sent_requests
   has_many :requested_users, through: :sent_requests
 
-  validates :mod, inclusion: 1..5
+  validates :mod, inclusion: 1..5, on: :update
   validates :user_name, presence: true
   validates :user_name, uniqueness: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :mod, presence: true
+  validates :first_name, presence: true, on: :update
+  validates :last_name, presence: true, on: :update
+  validates :mod, presence: true, on: :update
   validates :email, presence: true
   validates :email, uniqueness: true
+  validates :hobbies, presence: true, on: :update
   has_secure_password
 
   def full_name

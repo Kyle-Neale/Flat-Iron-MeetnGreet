@@ -13,11 +13,15 @@
   <%= f.text_field :last_name %><br>
   <%= f.label :mod%>
   <%= f.text_field :mod %><br>
-  <%= f.label :likes%>
-  <%= f.text_area :likes %><br>
+  <%= f.label :hobbies%>
+  <%= f.text_area :hobbies %><br>
   <%= f.label :email%>
   <%= f.text_field :email %><br>
   <%= f.label :user_name%>
   <%= f.text_field :user_name %><br>
   <%= f.submit %><br>
+<% end %>
+
+<%= form_tag user_path(@user.id), method: "delete" do %>
+  <%= submit_tag "Delete Profile" %>
 <% end %>

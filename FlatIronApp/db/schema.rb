@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2018_08_21_160055) do
-
   create_table "matches", force: :cascade do |t|
     t.integer "user_id"
     t.integer "matched_user_id"
@@ -46,10 +45,9 @@ ActiveRecord::Schema.define(version: 2018_08_21_160055) do
     t.string "password_digest"
     t.integer "mod"
     t.integer "age"
-    t.text "likes"
+    t.text "hobbies"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
   end
-
 end
