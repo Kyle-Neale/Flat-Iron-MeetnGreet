@@ -1,24 +1,30 @@
 <h3> Welcome <%= @user.full_name %>! </h3>
-<%= link_to "Edit Profile", edit_user_path(@user) %>
-
-<p> Sent Requests To:</p>
-<% @user.requested_users.each do |requested_user| %>
-  <li><%= requested_user.full_name %></li>
-<% end %>
-<%= link_to "Send a new request", new_sent_request_path %>
-
-<p> Number of Friends:
-    <%= @user.matches.count %>
-</p>
-<%= link_to "Guess to Match", new_match_path %>
-
-<p> Matched With: </p>
-<% @user.matched_users.each do |matched_user| %>
-  <li><%= link_to matched_user.full_name, profile_path(matched_user) %></li>
-<% end %>
 <br>
-<%= link_to "User Profiles", users_path %>
 
-<%= form_tag user_path(@user.id), method: "delete" do %>
-  <%= submit_tag "Delete Profile" %>
-<% end %>
+<div class = "wrapper">
+
+  <div class="box1">
+    <p> Sent Requests To:</p>
+    <% @user.requested_users.each do |requested_user| %>
+      <li><%= requested_user.full_name %></li>
+    <% end %>
+    <%= link_to "Send a new request", new_sent_request_path %>
+  </div>
+
+  <div class="box2">
+    <p> Number of Friends:
+        <%= @user.matches.count %>
+    </p>
+    <%= link_to "Guess to Match", new_match_path %>
+  </div>
+
+  <div class="box3">
+    <p> Matched Friends: </p>
+    <% @user.matched_users.each do |matched_user| %>
+      <li><%= link_to matched_user.full_name, profile_path(matched_user) %></li>
+    <% end %>
+    <br>
+  </div>
+  <br>
+
+</div>

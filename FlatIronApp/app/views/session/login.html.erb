@@ -1,22 +1,25 @@
-<h3> Login </h3>
+<h1>Flatiron MeetnGreet</h1>
+<div class="login">
+  <div class = "bg"></div>
 
-<br>
 <% if flash[:message] %>
   <%= flash[:message] %>
-<% end %>
-
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <li><%= error %></li>
   <% end %>
-<% end %>
 
-<%= form_tag do  %>
-  <label>Username:</label>
-  <%= text_field_tag :user_name %><br>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+    <% end %>
+  <div class = logbackground>
+    <%= form_tag do  %>
+    <label>Username:</label>
+    <%= text_field_tag :user_name %><br>
     <label>Password:</label>
-  <%= text_field_tag :password %><br>
-  <%= submit_tag "Login" %>
-<% end %>
-<br>
-<%= link_to "Sign up!", new_user_path %>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag "Login" %>
+    <% end %>
+    <br>
+    <%= link_to "Sign up!", new_user_path %>
+  </div>
+</div>

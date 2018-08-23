@@ -2,7 +2,7 @@ class SentRequestsController < ApplicationController
   def new
     user = User.find(session[:user_id])
     @sent_request = SentRequest.new
-    @users = User.all - [user] - (user.requested_users)
+    @users = User.all - [user] - (user.requested_users) - (user.matched_users)
     if @users.length == 0
       flash[:message] = "You've sent everyone a request."
     end

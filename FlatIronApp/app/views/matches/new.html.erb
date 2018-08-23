@@ -2,18 +2,23 @@
   <%= flash[:message] %>
 <% end %>
 
-<p>Hints:</p>
-<% @sent_requests.each do |request|%>
-  <% if request.requested_user == @user && !@user.matched_users.include?(request.user) %>
+  <div class="">
+
+    <p>Hints:</p>
+    <% @sent_requests.each do |request|%>
+    <% if request.requested_user == @user && !@user.matched_users.include?(request.user) %>
     <li>Mod<%= request.user.mod  %></li>
-    <li><%= request.user.likes  %></li>
+    <li><%= request.user.hobbies  %></li>
     <br>
-  <% end %>
-<% end %>
+    <% end %>
+    <% end %>
 
-<%= form_tag matches_path do %>
-  <%= label_tag "Enter the full name" %>
-  <%= text_field_tag "user[full_name]" %>
-  <%= submit_tag "Submittt" %>
+    <%= form_tag matches_path do %>
+    <%= label_tag "Enter the full name" %>
+    <%= text_field_tag "user[full_name]" %>
+    <%= submit_tag "Submit" %>
 
-<% end %>
+    <% end %>
+  </div>
+
+  <a href="http://tinypic.com?ref=ifvbmb" target="_blank"><img src="http://i67.tinypic.com/ifvbmb.jpg" border="0" alt="Image and video hosting by TinyPic"></a>

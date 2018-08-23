@@ -20,5 +20,6 @@ class ApplicationController < ActionController::Base
 
   def restrict_access
     redirect_to users_path, :alert => "Access denied"
+
   end
 end

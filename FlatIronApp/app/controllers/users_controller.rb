@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    restrict_access if @user.id != session[:user_id]
   end
 
   def update
