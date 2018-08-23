@@ -24,4 +24,6 @@ class Match < ApplicationRecord
   def inverse_match_options
     { matched_user_id: user_id, user_id: matched_user_id }
   end
+
+  #method for finding our matches, using class method sca
 end

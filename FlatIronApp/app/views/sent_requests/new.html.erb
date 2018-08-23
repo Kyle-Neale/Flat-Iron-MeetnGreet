@@ -1,7 +1,13 @@
+<br>
+<% if flash[:message] %>
+  <li><%= flash[:message] %></li>
+  <br>
+<% end %>
+
 <%= form_for (@sent_request) do |f| %>
   <label> Send Request to:
     <br>
-    <%= f.collection_select :user_id, User.all, :id, :first_name %>
+    <%= f.collection_select :user_id, @users, :id, :full_name %>
     <br>
   </label>
   <%= f.submit %>

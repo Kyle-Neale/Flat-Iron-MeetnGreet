@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.integer :mod
       t.integer :age
-      t.text :likes
+      t.text :hobbies
 
       t.timestamps
     end
