@@ -2,23 +2,34 @@
   <%= flash[:message] %>
 <% end %>
 
-  <div class="">
+<style media="screen">
+  div.matchbox {
+    text-align: center;
+    margin-top: 100px;
+  }
+</style>
 
-    <p>Hints:</p>
-    <% @sent_requests.each do |request|%>
-    <% if request.requested_user == @user && !@user.matched_users.include?(request.user) %>
-    <li>Mod<%= request.user.mod  %></li>
-    <li><%= request.user.hobbies  %></li>
+  <div class="matchbox">
+
+    <h3>Hints:</h3>
+    <% if @sent_requests %>
+    <% @sent_requests.each do |request| %>
+      <% if request.requested_user == @user && !@user.matched_users.include?(request.user) %>
+          <li>Mod<%= request.user.mod  %></li>
+          <li><%= request.user.hobbies  %></li>
+          <br>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>You have no new sent requests</p>
+    <% end %>
+
     <br>
-    <% end %>
-    <% end %>
-
+    <br>
     <%= form_tag matches_path do %>
-    <%= label_tag "Enter the full name" %>
+    <h4><%= label_tag "Enter the full name" %></h4>
     <%= text_field_tag "user[full_name]" %>
-    <%= submit_tag "Submit" %>
+    <%= submit_tag "Are you sure? 🙏" %>
 
     <% end %>
   </div>
-
-  <a href="http://tinypic.com?ref=ifvbmb" target="_blank"><img src="http://i67.tinypic.com/ifvbmb.jpg" border="0" alt="Image and video hosting by TinyPic"></a>

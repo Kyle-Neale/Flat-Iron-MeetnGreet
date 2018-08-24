@@ -1,4 +1,105 @@
+
 <br>
-<% @users.each do |user| %>
-  <p><%= link_to user.full_name, profile_path(user) %></p>
-<% end %>
+<h2>View Profiles</h2>
+<br>
+
+<div class="wrapperindex">
+  <span class="border border-primary">
+  <div class="table1">
+
+    <table>
+      <th>
+        <tr>
+          <th>Mod 1 Users: </th>
+        </tr>
+      </th>
+        <% @users.each do |user| %>
+        <% if user.mod == 1 %>
+        <tr>
+           🤖 <%= link_to user.full_name, profile_path(user) %>
+         </tr>
+          <% end %>
+        <% end %>
+    </table>
+
+  </div>
+  </span>
+
+<span class="border border-success">
+  <div class="table2">
+    <table>
+      <th>
+        <tr>
+          <th>Mod 2 Users: </th>
+        </tr>
+      </th>
+        <% @users.each do |user| %>
+        <% if user.mod == 2 %>
+        <tr>
+           🤖 <%= link_to user.full_name, profile_path(user) %>
+         </tr>
+          <% end %>
+        <% end %>
+    </table>
+  </div>
+  </span>
+
+<span class="border border-danger">
+  <div class="table3">
+    <table>
+      <th>
+        <tr>
+          <th>Mod 3 Users: </th>
+        </tr>
+      </th>
+        <% @users.each do |user| %>
+        <% if user.mod == 3 %>
+        <tr>
+          <td>
+            🤖 <%= link_to user.full_name, profile_path(user) %>
+          </td>
+         </tr>
+          <% end %>
+        <% end %>
+    </table>
+  </div>
+  </span>
+
+<span class="border border-warning">
+  <div class="table4">
+    <table>
+      <th>
+        <tr>
+          <th>Mod 4 Users: </th>
+        </tr>
+      </th>
+        <% @users.each do |user| %>
+        <% if user.mod == 4 %>
+        <tr>
+           🤖 <%= link_to user.full_name, profile_path(user) %>
+         </tr>
+          <% end %>
+        <% end %>
+    </table>
+  </div>
+  </span>
+
+<span class="border border-info">
+  <div class="table5">
+    <table>
+        <tr>
+          <th>Mod 5 Users: </th>
+        </tr>
+        <% @users.each do |user| %>
+        <% if user.mod == 5 %>
+        <tr>
+          <td>
+            🤖 <%= link_to user.full_name, profile_path(user) %>
+          </td>
+         </tr>
+          <% end %>
+        <% end %>
+    </table>
+  </div>
+  </span>
+</div>

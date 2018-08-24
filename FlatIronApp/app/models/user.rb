@@ -11,8 +11,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
   validates :mod, presence: true, on: :update
-  validates :email, presence: true
-  validates :email, uniqueness: true
   validates :hobbies, presence: true, on: :update
   has_secure_password
 

@@ -38,8 +38,8 @@ h1 {
   margin: 100px auto;
   // border: 7px solid white;
   border-radius: 25px;
-  background: rgba(0, 0, 0, 0.75);
-  width: 25%
+  background: rgba(0, 0, 0, 0.6);
+  width: 20%
 }
 
 .wrapper {
@@ -48,4 +48,11 @@ grid-template-areas: "box1 box2 box3"
                       "footer footer footer";
 grid-template-columns: 1fr 1fr 1fr;
 grid-gap: 10px;
+}
+
+.wrapperindex {
+  display: grid;
+  grid-template-areas: "table1 table2 table3 table4 table5";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }

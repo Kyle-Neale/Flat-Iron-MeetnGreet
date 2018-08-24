@@ -1,30 +1,36 @@
-<h3> Welcome <%= @user.full_name %>! </h3>
+<h1> Welcome <%= @user.full_name %>! </h1>
+<br>
 <br>
 
 <div class = "wrapper">
 
   <div class="box1">
-    <p> Sent Requests To:</p>
+    <h3> Sent Requests To:</h3>
     <% @user.requested_users.each do |requested_user| %>
       <li><%= requested_user.full_name %></li>
+      <br>
     <% end %>
-    <%= link_to "Send a new request", new_sent_request_path %>
+    <button type="button" class="btn btn-outline-primary">
+      <%= link_to "Send a new request", new_sent_request_path %>
+    </button>
   </div>
 
   <div class="box2">
-    <p> Number of Friends:
+    <h3> Number of Friends: </h3>
         <%= @user.matches.count %>
-    </p>
-    <%= link_to "Guess to Match", new_match_path %>
+        <br>
+        <button type="button" class="btn btn-outline-primary">
+          <%= link_to "Guess to Match", new_match_path %>
+        </button>
   </div>
 
   <div class="box3">
-    <p> Matched Friends: </p>
+    <h3> Matched Friends: </h3>
     <% @user.matched_users.each do |matched_user| %>
       <li><%= link_to matched_user.full_name, profile_path(matched_user) %></li>
     <% end %>
     <br>
   </div>
-  <br>
+
 
 </div>

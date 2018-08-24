@@ -1,6 +1,8 @@
-<h3><%= @user.full_name %> Profile</h3>
-
-<h5> Mod: <%= @user.mod %> </h5>
-<p>Likes: <%= @user.hobbies %> </p>
-
-<%= link_to "View all profiles", users_path %>
+<h2><%= @user.first_name %>'s Profile</h2>
+<br>
+<h3> Mod: <%= @user.mod %> </h3>
+<h3>Hobbies: <%= @user.hobbies %> </h3>
+<br>
+<button type="button" class="btn btn-outline-primary">
+  <%= link_to "View all profiles", users_path %>
+</button>
