@@ -16,7 +16,9 @@
         <% @users.each do |user| %>
         <% if user.mod == 1 %>
         <tr>
-           🤖 <%= link_to user.full_name, profile_path(user) %>
+          <td>
+            🤖 <%= link_to user.full_name, profile_path(user) %>
+          </td>
          </tr>
           <% end %>
         <% end %>
@@ -36,7 +38,9 @@
         <% @users.each do |user| %>
         <% if user.mod == 2 %>
         <tr>
-           🤖 <%= link_to user.full_name, profile_path(user) %>
+          <td>
+            🤖 <%= link_to user.full_name, profile_path(user) %>
+          </td>
          </tr>
           <% end %>
         <% end %>
@@ -76,7 +80,9 @@
         <% @users.each do |user| %>
         <% if user.mod == 4 %>
         <tr>
-           🤖 <%= link_to user.full_name, profile_path(user) %>
+          <td>
+            🤖 <%= link_to user.full_name, profile_path(user) %>
+          </td>
          </tr>
           <% end %>
         <% end %>
@@ -87,9 +93,11 @@
 <span class="border border-info">
   <div class="table5">
     <table>
+      <th>
         <tr>
           <th>Mod 5 Users: </th>
         </tr>
+      </th>
         <% @users.each do |user| %>
         <% if user.mod == 5 %>
         <tr>

@@ -17,7 +17,7 @@ class MatchesController < ApplicationController
             end
         else
           flash[:message] = "Guess again succccckeerrr!"
-          render '/matches/new'
+          new_match_url
         end
       else
         flash[:message] = "Guess again succccckeerrr!"
