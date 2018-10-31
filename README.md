@@ -22,7 +22,8 @@
 - Run `rake db:seed`
 - Run `rails s`
 
-## Contributing Guide
+## Contributing
+[Contributing Guide](./CONTRIBUTING.md)
 
 ## Authors
 - Kyle Neale
